@@ -14,10 +14,8 @@ https://code.visualstudio.com/api/references/vscode-api
 
 ### 功能
 
-#### 修改当前工作区的 editor.formatOnSave
+#### ✅ 修改当前工作区的 editor.formatOnSave
 
-✅ 打开的文件 => 右键菜单 => 修改工作区配置 => editor.formatOnSave 切换
+打开的文件 => 右键菜单 => 修改工作区配置 => editor.formatOnSave 切换
 
-⬜️ ...
-
-#### ...
+#### ⬜️ ...
