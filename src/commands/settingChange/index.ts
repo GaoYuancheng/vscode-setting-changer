@@ -14,6 +14,9 @@ const pathSymbolMap: Record<string, string> = {
   // haiku: "/",
 };
 
+const curPlatform = os.platform();
+const pathSymbol = pathSymbolMap[curPlatform] || "";
+
 interface CommonAction {}
 
 interface SwitchCommandAction extends CommonAction {
@@ -33,8 +36,7 @@ const findTargetWorkerSpace = (filePath?: string): undefined | string => {
   if (!filePath) {
     return undefined;
   }
-  const curPlatform = os.platform();
-  const pathSymbol = pathSymbolMap[curPlatform] || "";
+
   const { workspaceFolders } = vscode.workspace;
   const filePathArr = filePath.split(pathSymbol);
 
@@ -84,8 +86,9 @@ const getNewSetting = (oldJsonPath: string, commandAction: CommandAction) => {
 
 // 修改 .vscode/setting.json
 const changeSettingJson = (dirPath: string, commandAction: CommandAction) => {
-  const vscodeSettingDirPath = dirPath + "\\.vscode";
-  const vscodeSettingFilePath = vscodeSettingDirPath + "\\settings.json";
+  const vscodeSettingDirPath = dirPath + `${pathSymbol}.vscode`;
+  const vscodeSettingFilePath =
+    vscodeSettingDirPath + `${pathSymbol}settings.json`;
   const newSetting = getNewSetting(vscodeSettingFilePath, commandAction);
 
   if (fs.existsSync(vscodeSettingDirPath)) {
