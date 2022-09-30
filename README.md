@@ -19,3 +19,19 @@ https://code.visualstudio.com/api/references/vscode-api
 打开的文件 => 右键菜单 => 修改工作区配置 => editor.formatOnSave 切换
 
 #### ⬜️ ...
+
+### 发布
+
+https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+
+1. npm install -g vsce
+
+2. Get a Personal Access Token
+
+3. Create Personal Access Tokens
+
+4. Create a publisher
+
+5. vsce login <publisher name>
+
+6. vsce publish

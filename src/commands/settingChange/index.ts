@@ -1,5 +1,18 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
+import * as os from "os";
+
+const pathSymbolMap: Record<string, string> = {
+  win32: "\\",
+  linux: "/",
+  // aix: "/",
+  // darwin: "/",
+  // freebsd: "/",
+  // openbsd: "/",
+  // sunos: "/",
+  // android: "/",
+  // haiku: "/",
+};
 
 interface CommonAction {}
 
@@ -20,8 +33,10 @@ const findTargetWorkerSpace = (filePath?: string): undefined | string => {
   if (!filePath) {
     return undefined;
   }
+  const curPlatform = os.platform();
+  const pathSymbol = pathSymbolMap[curPlatform] || "";
   const { workspaceFolders } = vscode.workspace;
-  const filePathArr = filePath.split("\\");
+  const filePathArr = filePath.split(pathSymbol);
 
   const targetWorkerSpace = workspaceFolders?.find(
     (item) => item.uri.fsPath === filePath
@@ -30,7 +45,7 @@ const findTargetWorkerSpace = (filePath?: string): undefined | string => {
     return targetWorkerSpace.uri.fsPath;
   }
   filePathArr.pop();
-  const newFilePath = filePathArr.join("\\");
+  const newFilePath = filePathArr.join(pathSymbol);
   return findTargetWorkerSpace(newFilePath);
 };
 
