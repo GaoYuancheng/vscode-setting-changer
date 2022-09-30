@@ -9,8 +9,10 @@
   "categories": [
     "Other"
   ],
+  "repository": "https://github.com/GaoYuancheng/vscode-setting-changer",
+  "publisher": "GYC",
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -58,7 +60,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.71.0",
+    "@types/vscode": "^1.70.0",
     "@types/glob": "^7.2.0",
     "@types/mocha": "^9.1.1",
     "@types/node": "16.x",
