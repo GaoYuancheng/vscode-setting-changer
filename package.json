@@ -33,11 +33,11 @@
       ],
       "settingChangeMenu": [
         {
-          "when": "isWindows",
+          "when": "editorFocus",
           "command": "formatOnSaveSwitch"
         },
         {
-          "when": "isWindows",
+          "when": "editorFocus",
           "command": "workspace-setting-changer.helloWorld1"
         }
       ]
