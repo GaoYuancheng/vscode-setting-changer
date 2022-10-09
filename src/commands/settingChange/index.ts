@@ -6,7 +6,7 @@ const pathSymbolMap: Record<string, string> = {
   win32: "\\",
   linux: "/",
   // aix: "/",
-  // darwin: "/",
+  darwin: "/",
   // freebsd: "/",
   // openbsd: "/",
   // sunos: "/",
@@ -15,7 +15,7 @@ const pathSymbolMap: Record<string, string> = {
 };
 
 const curPlatform = os.platform();
-const pathSymbol = pathSymbolMap[curPlatform] || "";
+const pathSymbol = pathSymbolMap[curPlatform] || "/";
 
 interface CommonAction {}
 
