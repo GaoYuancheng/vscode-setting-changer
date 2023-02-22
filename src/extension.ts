@@ -1,11 +1,11 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
+import { open } from "fs";
 import * as vscode from "vscode";
+import { openByBrowser } from "./commands/open";
 import { settingChange } from "./commands/settingChange";
 
 export function activate(context: vscode.ExtensionContext) {
-  // 当前打开的 编辑器窗口 path
-
   let formatOnSaveSwitch = vscode.commands.registerCommand(
     "formatOnSaveSwitch",
     () => {
@@ -27,6 +27,18 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  context.subscriptions.push(formatOnSaveSwitch, disposableHelloWorld1);
+  let helloWord = vscode.commands.registerCommand(
+    "workspace-setting-changer.openByBrowser",
+    (e) => {
+      vscode.window.showInformationMessage("openByBrowser");
+      openByBrowser(e.fsPath);
+    }
+  );
+
+  context.subscriptions.push(
+    formatOnSaveSwitch,
+    disposableHelloWorld1,
+    helloWord
+  );
 }
 export function deactivate() {}

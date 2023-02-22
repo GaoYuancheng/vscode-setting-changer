@@ -1,12 +1,10 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
 import * as os from "os";
-import {
-  platformInfo,
-  showErrorMessageForPlatform,
-} from "../../utils/platform";
+import { platformMap } from "../../utils/platform";
 
-const pathSymbol = platformInfo.pathSymbol;
+const curPlatform = os.platform();
+const pathSymbol = platformMap[curPlatform].pathSymbol;
 
 interface CommonAction {}
 
@@ -98,7 +96,7 @@ const changeSettingJson = (dirPath: string, commandAction: CommandAction) => {
 
 export const settingChange = (actions: CommandAction) => {
   if (!pathSymbol) {
-    showErrorMessageForPlatform();
+    vscode.window.showErrorMessage(`暂时不支持 ${curPlatform} 系统`);
   }
 
   try {

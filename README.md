@@ -18,9 +18,15 @@ https://code.visualstudio.com/api/references/vscode-api
 
 打开的文件 => 右键菜单 => 修改工作区配置 => editor.formatOnSave 切换
 
+#### ✅ 对于在浏览器中其中打开
+
+左侧资源区 => 右键菜单 => 在浏览器中打开
+
 #### ⬜️ ...
 
 ### 发布
+
+https://zhuanlan.zhihu.com/p/504218497
 
 https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 
