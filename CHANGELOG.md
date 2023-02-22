@@ -1,8 +1,13 @@
 # Change Log
 
-All notable changes to the "switch-save-setting" extension will be documented in this file.
+### v0.0.4
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+新增 工作区关闭自动保存的功能
+原理 代码区右键菜单修改 editor.formatOnSave
+
+### v0.0.5
+
+新增 资源区 对于 html xml pdf 三种类型的文件 可以选择在浏览器中打开
 
 ## [Unreleased]
 

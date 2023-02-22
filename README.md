@@ -41,3 +41,7 @@ https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 5. vsce login <publisher name>
 
 6. vsce publish
+
+### TODO
+
+1. 修改为 pnpm 时发布会报错
