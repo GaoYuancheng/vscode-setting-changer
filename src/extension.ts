@@ -7,7 +7,7 @@ import { settingChange } from "./commands/settingChange";
 
 export function activate(context: vscode.ExtensionContext) {
   let formatOnSaveSwitch = vscode.commands.registerCommand(
-    "formatOnSaveSwitch",
+    "workspace-setting-changer.formatOnSaveSwitch",
     () => {
       settingChange({
         type: "switch",

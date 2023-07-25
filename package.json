@@ -2,7 +2,7 @@
   "name": "workspace-setting-changer",
   "displayName": "workspace-setting-changer",
   "description": "修改工作区setting",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -18,7 +18,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "formatOnSaveSwitch",
+        "command": "workspace-setting-changer.formatOnSaveSwitch",
         "title": "editor.formatOnSave 切换"
       },
       {
@@ -42,12 +42,17 @@
         {
           "group": "2_workspace",
           "submenu": "settingChangeMenu"
+        },
+        {
+          "when": "editorFocus",
+          "command": "workspace-setting-changer.openByBrowser",
+          "group": "navigation@9"
         }
       ],
       "settingChangeMenu": [
         {
           "when": "editorFocus",
-          "command": "formatOnSaveSwitch"
+          "command": "workspace-setting-changer.formatOnSaveSwitch"
         },
         {
           "when": "editorFocus",
