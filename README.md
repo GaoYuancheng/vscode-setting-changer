@@ -20,7 +20,7 @@ https://code.visualstudio.com/api/references/vscode-api
 
 #### ✅ 对于在浏览器中其中打开
 
-左侧资源区 => 右键菜单 => 在浏览器中打开
+左侧资源区/代码区 => 右键菜单 => 在浏览器中打开
 
 #### ⬜️ ...
 
