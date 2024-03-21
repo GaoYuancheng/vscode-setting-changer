@@ -6,7 +6,8 @@ import { openByBrowser } from "./commands/open";
 import { settingChange } from "./commands/settingChange";
 
 export function activate(context: vscode.ExtensionContext) {
-  let formatOnSaveSwitch = vscode.commands.registerCommand(
+  // 切换自动保存配置
+  const formatOnSaveSwitch = vscode.commands.registerCommand(
     "workspace-setting-changer.formatOnSaveSwitch",
     () => {
       settingChange({
@@ -15,7 +16,8 @@ export function activate(context: vscode.ExtensionContext) {
       });
     }
   );
-  let disposableHelloWorld1 = vscode.commands.registerCommand(
+
+  const helloWorld1 = vscode.commands.registerCommand(
     "workspace-setting-changer.helloWorld1",
     () => {
       settingChange({
@@ -27,7 +29,8 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  let helloWord = vscode.commands.registerCommand(
+  // 使用浏览器打开
+  const openByBrowserCommand = vscode.commands.registerCommand(
     "workspace-setting-changer.openByBrowser",
     (e) => {
       vscode.window.showInformationMessage("openByBrowser");
@@ -35,10 +38,20 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  // 在每行的最后添加逗号
+  const addCommaToEveryLineCommand = vscode.commands.registerCommand(
+    "workspace-setting-changer.addCommaToEveryLine",
+    (e) => {
+      vscode.window.showInformationMessage("addCommaToEveryLineCommand");
+      // openByBrowser(e.fsPath);
+    }
+  );
+
   context.subscriptions.push(
     formatOnSaveSwitch,
-    disposableHelloWorld1,
-    helloWord
+    helloWorld1,
+    openByBrowserCommand,
+    addCommaToEveryLineCommand
   );
 }
 export function deactivate() {}
