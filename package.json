@@ -2,7 +2,7 @@
   "name": "workspace-setting-changer",
   "displayName": "workspace-setting-changer",
   "description": "修改工作区setting",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -19,19 +19,19 @@
     "commands": [
       {
         "command": "workspace-setting-changer.formatOnSaveSwitch",
-        "title": "editor.formatOnSave"
+        "title": "editor.formatOnSave 切换"
       },
       {
         "command": "workspace-setting-changer.helloWorld1",
-        "title": "Hello World1"
+        "title": "Hello World1 测试"
       },
       {
         "command": "workspace-setting-changer.openByBrowser",
-        "title": "openByBrowser"
+        "title": "使用浏览器打开"
       },
       {
         "command": "workspace-setting-changer.addCommaToEveryLine",
-        "title": "addCommaToEveryLine"
+        "title": "在每行的最后添加逗号"
       }
     ],
     "menus": {
