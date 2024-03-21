@@ -4,6 +4,7 @@ import { open } from "fs";
 import * as vscode from "vscode";
 import { openByBrowser } from "./commands/open";
 import { settingChange } from "./commands/settingChange";
+import { addCommaToEveryLine } from "./commands/addCommaToEveryLine";
 
 export function activate(context: vscode.ExtensionContext) {
   // 切换自动保存配置
@@ -43,7 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
     "workspace-setting-changer.addCommaToEveryLine",
     (e) => {
       vscode.window.showInformationMessage("addCommaToEveryLineCommand");
-      // openByBrowser(e.fsPath);
+      addCommaToEveryLine(e.fsPath);
     }
   );
 
