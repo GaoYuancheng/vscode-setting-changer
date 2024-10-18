@@ -9,6 +9,10 @@
 
 新增 资源区 对于 html xml pdf 三种类型的文件 可以选择在浏览器中打开
 
+### v0.0.10
+
+支持 资源区 选中目录右键使用 code 打开
+
 ## [Unreleased]
 
 - Initial release

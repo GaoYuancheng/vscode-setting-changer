@@ -4,6 +4,10 @@
 
 #### vscode 插件开发文档
 
+中文
+
+https://vscode.github.net.cn/api/references/vscode-api
+
 GET STARTED
 
 https://code.visualstudio.com/api/get-started/your-first-extension
@@ -26,7 +30,16 @@ https://code.visualstudio.com/api/references/vscode-api
 
 打开的文件 => 右键菜单 => 修改工作区配置 => 在每行的最后添加逗号
 
+#### ✅ 使用 code 打开文件夹
+
+左侧资源区 => 右键菜单 => 使用 code 打开
+
 #### ⬜️ ...
+
+### 开发
+
+1. npm run watch
+2. 调试模式启动 Run Extension
 
 ### 发布
 

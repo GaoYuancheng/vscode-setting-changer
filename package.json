@@ -2,7 +2,7 @@
   "name": "workspace-setting-changer",
   "displayName": "workspace-setting-changer",
   "description": "修改工作区setting",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -32,6 +32,10 @@
       {
         "command": "workspace-setting-changer.addCommaToEveryLine",
         "title": "在每行的最后添加逗号"
+      },
+      {
+        "command": "workspace-setting-changer.openByCode",
+        "title": "使用 code 打开"
       }
     ],
     "menus": {
@@ -39,6 +43,10 @@
         {
           "when": "resourceLangId == html || resourceLangId == xml || resourceExtname == .pdf",
           "command": "workspace-setting-changer.openByBrowser",
+          "group": "navigation@9"
+        },
+        {
+          "command": "workspace-setting-changer.openByCode",
           "group": "navigation@9"
         }
       ],
@@ -48,7 +56,7 @@
           "submenu": "settingChangeMenu"
         },
         {
-          "when": "editorFocus",
+          "when": "editorFocus && (resourceLangId == html || resourceLangId == xml || resourceExtname == .pdf)",
           "command": "workspace-setting-changer.openByBrowser",
           "group": "navigation@9"
         }

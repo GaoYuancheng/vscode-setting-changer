@@ -2,10 +2,10 @@
 // Import the module and reference it with the alias vscode in your code below
 import { open } from "fs";
 import * as vscode from "vscode";
-import { openByBrowser } from "./commands/open";
+import { openByBrowser } from "./commands/openByBrowser";
 import { settingChange } from "./commands/settingChange";
 import { addCommaToEveryLine } from "./commands/addCommaToEveryLine";
-
+import { openByCode } from "./commands/openByCode";
 export function activate(context: vscode.ExtensionContext) {
   // 切换自动保存配置
   const formatOnSaveSwitch = vscode.commands.registerCommand(
@@ -48,11 +48,21 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  // 使用 code 打开目录中文件夹
+  const openByCodeCommand = vscode.commands.registerCommand(
+    "workspace-setting-changer.openByCode",
+    (e) => {
+      vscode.window.showInformationMessage("openByCode");
+      openByCode(e.fsPath);
+    }
+  );
+
   context.subscriptions.push(
     formatOnSaveSwitch,
     helloWorld1,
     openByBrowserCommand,
-    addCommaToEveryLineCommand
+    addCommaToEveryLineCommand,
+    openByCodeCommand
   );
 }
 export function deactivate() {}
