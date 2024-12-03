@@ -34,6 +34,10 @@ https://code.visualstudio.com/api/references/vscode-api
 
 左侧资源区 => 右键菜单 => 使用 code 打开
 
+#### ✅ 在当前文件夹下生成 index.ts 引用并导出当前文件夹下所有的文件
+
+左侧资源区选择文件夹 => 右键菜单 => 生成 indexTs（覆盖）
+
 #### ⬜️ ...
 
 ### 开发
@@ -47,17 +51,11 @@ https://zhuanlan.zhihu.com/p/504218497
 
 https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 
-1. npm install -g vsce
+https://marketplace.visualstudio.com/manage/publishers/gyc
 
-2. Get a Personal Access Token
-
-3. Create Personal Access Tokens
-
-4. Create a publisher
-
-5. vsce login <publisher name>
-
-6. vsce publish
+1. vsce publish
+2. token 过期需要重新获取 https://dev.azure.com/389152147/_usersSettings/tokens
+3. vsce login GYC
 
 ### TODO
 

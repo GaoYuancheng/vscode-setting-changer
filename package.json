@@ -2,7 +2,7 @@
   "name": "workspace-setting-changer",
   "displayName": "workspace-setting-changer",
   "description": "修改工作区setting",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -36,6 +36,10 @@
       {
         "command": "workspace-setting-changer.openByCode",
         "title": "使用 code 打开"
+      },
+      {
+        "command": "workspace-setting-changer.genIndexTs",
+        "title": "生成indexTs（覆盖）"
       }
     ],
     "menus": {
@@ -47,6 +51,11 @@
         },
         {
           "command": "workspace-setting-changer.openByCode",
+          "group": "navigation@9"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "workspace-setting-changer.genIndexTs",
           "group": "navigation@9"
         }
       ],

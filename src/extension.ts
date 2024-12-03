@@ -6,6 +6,7 @@ import { openByBrowser } from "./commands/openByBrowser";
 import { settingChange } from "./commands/settingChange";
 import { addCommaToEveryLine } from "./commands/addCommaToEveryLine";
 import { openByCode } from "./commands/openByCode";
+import { genIndexTs } from "./commands/genIndex";
 export function activate(context: vscode.ExtensionContext) {
   // 切换自动保存配置
   const formatOnSaveSwitch = vscode.commands.registerCommand(
@@ -57,12 +58,22 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  // 生成当前选中目录的 index.ts
+  const genIndexTsCommand = vscode.commands.registerCommand(
+    "workspace-setting-changer.genIndexTs",
+    (e) => {
+      vscode.window.showInformationMessage("genIndexTsCommand");
+      genIndexTs(e.fsPath);
+    }
+  );
+
   context.subscriptions.push(
     formatOnSaveSwitch,
     helloWorld1,
     openByBrowserCommand,
     addCommaToEveryLineCommand,
-    openByCodeCommand
+    openByCodeCommand,
+    genIndexTsCommand
   );
 }
 export function deactivate() {}
