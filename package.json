@@ -40,6 +40,10 @@
       {
         "command": "workspace-setting-changer.genIndexTs",
         "title": "生成indexTs（覆盖）"
+      },
+      {
+        "command": "workspace-setting-changer.genIndexTsForImage",
+        "title": "生成indexTs（图片）"
       }
     ],
     "menus": {
@@ -54,9 +58,8 @@
           "group": "navigation@9"
         },
         {
-          "when": "explorerResourceIsFolder",
-          "command": "workspace-setting-changer.genIndexTs",
-          "group": "navigation@9"
+          "group": "navigation@9",
+          "submenu": "genIndexTsMenu"
         }
       ],
       "editor/context": [
@@ -68,6 +71,16 @@
           "when": "editorFocus && (resourceLangId == html || resourceLangId == xml || resourceExtname == .pdf)",
           "command": "workspace-setting-changer.openByBrowser",
           "group": "navigation@9"
+        }
+      ],
+      "genIndexTsMenu": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "workspace-setting-changer.genIndexTs"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "workspace-setting-changer.genIndexTsForImage"
         }
       ],
       "settingChangeMenu": [
@@ -89,6 +102,10 @@
       {
         "id": "settingChangeMenu",
         "label": "修改工作区配置"
+      },
+      {
+        "id": "genIndexTsMenu",
+        "label": "生成indexTs"
       }
     ]
   },

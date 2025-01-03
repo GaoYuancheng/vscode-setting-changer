@@ -67,13 +67,32 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  // 生成当前选中目录的 index.ts 图片文件夹用
+  const genIndexTsForImageCommand = vscode.commands.registerCommand(
+    "workspace-setting-changer.genIndexTsForImage",
+    (e) => {
+      vscode.window.showInformationMessage("genIndexTsForImageCommand");
+      genIndexTs(e.fsPath, {
+        dirExportOption: {
+          exportDefault: false,
+          exportAll: true,
+        },
+        fileExportOption: {
+          exportDefault: true,
+          exportAll: false,
+        },
+      });
+    }
+  );
+
   context.subscriptions.push(
     formatOnSaveSwitch,
     helloWorld1,
     openByBrowserCommand,
     addCommaToEveryLineCommand,
     openByCodeCommand,
-    genIndexTsCommand
+    genIndexTsCommand,
+    genIndexTsForImageCommand
   );
 }
 export function deactivate() {}
