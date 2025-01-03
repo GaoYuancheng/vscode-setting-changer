@@ -2,7 +2,7 @@
   "name": "workspace-setting-changer",
   "displayName": "workspace-setting-changer",
   "description": "修改工作区setting",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "engines": {
     "vscode": "^1.70.0"
   },
